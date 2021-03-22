@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+
+        <script>
+			let str1 = 'hello'; // string
+			console.log(typeof str1, str1);
+			let str2;
+			str2 = 'ok10';
+
+			let str3 = str1 + ' ' + str2; // hello okten
+			console.log(str3);
+			let age = 4.5;
+
+			let active = true;
+
+			//              0      1        2
+			let skills = ['html', 'js', 'react'];
+
+			let company = {
+				id: 1,
+				title: 'okten',
+				skills: ['java', 'js', 'fe', 'fs', 'qa'],
+				exp: age,
+				isActive: true
+			};
+
+			// document.write('<h3>' + str3 + ' ' + age + '</h3>');
+			// document.write(`<h1>${str3} ${age} ${active} ${skills[0]} ${skills[1]}</h1>`); // template string
+
+			console.log(company);
+			document.write(`<h1>${company['id']}-${company.title}-${company.exp}</h1>`);
+
+			let a = 10;
+			let b = 20;
+			let s = '!';
+
+			console.log(a + b); // 30 // number
+			console.log(a + b + s); // string
+			console.log(s + (a - b));
+			console.log(a + s + b);
+			// alert('adasd');
+
+			// let xxx = +prompt('????');
+			// console.log(xxx);
+
+			// > < >= <= != == !== ===
+			let b1 = 5 > 6; // false
+			let b2 = 5 != 6; // true
+			console.log(b2);
+			console.log('5' == '5');
+			console.log(5 === '5');
+
+			// if (+prompt('your age?') > 18) {
+			// 	console.log('porn');
+			// } else {
+			// 	console.log('no porno');
+			// }
+
+			console.log(!!0); // false
+			console.log(!!null); // false
+			console.log(!!undefined); // false
+			console.log(!!''); // false
+			console.log(!!NaN); // false
+			console.log(!!' '); // true
+			console.log(!!'1'); // true
+			console.log(!!'-1'); // true
+			console.log(!!'-10000'); // true
+			console.log(!!'jasdhgadjh'); // true
+
+			console.log(true || false); // true
+			console.log(true && false || true); // false
+			console.log(true && true); // true
+			console.log(100 > 200 && 200 > 300); //false
+			console.log(100 < 200 || (200 > 300 && 1 > 5)); //true
+
+
+        </script>
+
+    </body>
+</html>
