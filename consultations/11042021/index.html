@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+
+        <script>
+			let user = {
+				name: 'vaysa',
+				age: 123,
+				status: true,
+				wife: {name: 'olya', age: 32, language: {title: 'ua', foo: 'bar'}},
+				skill: {name: 'java', exp: 10}
+			};
+			// let userName = user.name;
+			// let userAge = user.age;
+			// let userStatus = user.status;
+
+			let {name, age, wife: {name: wifeName, age: wifeAge}} = user;
+			console.log(name, wifeName);
+
+			let count = 100;
+			let countObject = {count};
+
+			let copyUser = {name: 'kokos', ...user};
+			console.log(copyUser);
+			console.log(user === copyUser);
+			console.log(user.wife === copyUser.wife);
+			console.log(copyUser);
+
+
+			/*user -> name age status*/
+			function foobar({name, status}) {
+				console.log(name, status);
+			}
+
+			foobar(user);
+
+			//
+			// let arr = [1, 2, 3];
+			// arr.e = 100;
+			// console.log(arr);
+			//
+			// let x = {};
+			// x.asdqwe = 100;
+			// console.log(x);
+
+
+			let arr = [11, 22, 33];
+			// let a = arr[0];
+			// let b = arr[1];
+			// let c = arr[2];
+			let [a, b, c] = arr;
+			console.log(a, b, c);
+			let copyArr = [100, ...arr, 200];
+			console.log(copyArr);
+
+			let cArr = arr;
+
+
+			function asdqwe(x, y, z) {
+				console.log(x, y, z);
+			}
+
+			asdqwe(...arr);
+			Math.min(...arr);
+
+			Array.prototype.myLuckyNember = 13;
+			let arr1 = [1, 2, 3, 4, 5];
+			console.log(arr1.myLuckyNember);
+
+			let users = [
+				{name: 'vasya', age: 31, status: false},
+				{name: 'petya', age: 30, status: true},
+				{name: 'kolya', age: 29, status: true},
+				{name: 'olya', age: 28, status: false},
+				{name: 'max', age: 30, status: true},
+				{name: 'anya', age: 31, status: false},
+				{name: 'oleg', age: 28, status: false},
+				{name: 'andrey', age: 29, status: true},
+				{name: 'masha', age: 30, status: true},
+				{name: 'olya', age: 31, status: false},
+				{name: 'max', age: 31, status: true}
+			];
+
+			console.log(users.myLuckyNember);
+
+			Array.prototype.foo = function () {
+				console.log('faq');
+			};
+
+			users.foo();
+			arr1.foo();
+
+			let client = {};
+			client.__proto__ = user;
+			console.log(client);
+			console.log(client.name);
+
+
+			function rec(user) {
+				for (const userKey in user) {
+					if (typeof user[userKey] !== 'object') {
+						console.log(user[userKey]);
+					} else {
+						// если свойство является объектом то запусти такую жк функцию
+						rec(user[userKey]);
+					}
+				}
+			}
+
+			console.log('----------------------');
+			rec(user);
+
+        </script>
+
+    </body>
+</html>
